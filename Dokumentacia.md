@@ -197,13 +197,13 @@ Server Nevhodná stránka > Services > HTTP
     
         Router> enable
         Router# configure terminal
-        Router(config)# access-list 101 deny ip 192.168.20.0 0.0.0.255 192.168.30.0 0.0.0.255    <sub>(Blokovanie prístupu medzi sieťami hostí a detí)</sub>
-        Router(config)# access-list 101 deny ip 192.168.20.0 0.0.0.255 192.168.10.0 0.0.0.255    <sub>(Blokovanie prístupu medzi sieťami hostí a rodičov)</sub>
-        Router(config)# access-list 101 deny ip 192.168.20.0 0.0.0.255 192.168.40.0 0.0.0.255    <sub>(Blokovanie prístupu medzi sieťami hostí a smart home)</sub>
-        Router(config)# access-list 101 permit ip 192.168.20.0 0.0.0.255 any                     <sub>(Povolenie prístupu hostí do internetu)</sub>
-        Router(config)# interface FastEthernet1/0                                                <sub>(Port hostí)</sub>
-        Router(config-if)# ip access-group 101 in                                                <sub>(Aplikovanie AC listu)</sub>
+        Router(config)# access-list 101 deny ip 192.168.20.0 0.0.0.255 192.168.30.0 0.0.0.255         (Blokovanie prístupu medzi sieťami hostí a detí)
+        Router(config)# access-list 101 deny ip 192.168.20.0 0.0.0.255 192.168.10.0 0.0.0.255         (Blokovanie prístupu medzi sieťami hostí a rodičov)
+        Router(config)# access-list 101 deny ip 192.168.20.0 0.0.0.255 192.168.40.0 0.0.0.255         (Blokovanie prístupu medzi sieťami hostí a smart home)
+        Router(config)# access-list 101 permit ip 192.168.20.0 0.0.0.255 any                          (Povolenie prístupu hostí do internetu)
+        Router(config)# interface FastEthernet1/0                                                     (Port hostí)
+        Router(config-if)# ip access-group 101 in                                                     (Aplikovanie AC listu)
 
 ### Komplikácie
-  * Whitelist stránom pre sieť DETI sa mi nepodarilo zrealizovať, wi-fi routre, ktoré som použil, majú GUI rozhranie, ale nemajú CLI. V GUI rozhraní chýba veľa nastavení, nie je tam URL whitelist ale len     blacklist, ktorý som taktiež nevedel spojazdniť. (Napriek príkazu blokovať URL stránky, je nevhodná stránka pre sieť DETI stále dostupná) 
+  * Whitelist stránok pre sieť DETI sa mi nepodarilo zrealizovať, wi-fi routre, ktoré som použil, majú GUI rozhranie, ale nemajú CLI. V GUI rozhraní chýba veľa nastavení, nie je tam URL whitelist ale len     blacklist, ktorý som taktiež nevedel spojazdniť. (Napriek príkazu blokovať URL stránky, je nevhodná stránka pre sieť DETI stále dostupná) 
   * S programom sa mi pracovalo celkom ťažko a zadanie mi trvalo splniť omnoho viac času, ako som si predstavoval
